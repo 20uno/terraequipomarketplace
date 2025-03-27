@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terraequipo - Marketplace de Maquinaria Pesada</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Terraequipo Logo">
+                </a>
+            </div>
+            
+            <div class="search-bar">
+                <form action="search.html" method="GET">
+                    <input type="text" placeholder="Buscar maquinaria, refacciones o empleos...">
+                    <select name="category">
+                        <option value="all">Todas las categorías</option>
+                        <option value="rent">Renta de maquinaria</option>
+                        <option value="sale">Venta de maquinaria</option>
+                        <option value="parts">Refacciones</option>
+                        <option value="jobs">Bolsa de trabajo</option>
+                    </select>
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            
+            <div class="user-actions">
+                <a href="login.html" class="btn-login">Iniciar Sesión</a>
+                <a href="register.html" class="btn-register">Registrarse</a>
+                <a href="post-ad.html" class="btn-post">Publicar Anuncio</a>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="marketplace.html">Marketplace</a></li>
+                    <li><a href="jobs.html">Bolsa de Trabajo</a></li>
+                    <li><a href="insurance.html">Seguros y Fletes</a></li>
+                    <li><a href="parts.html">Refacciones</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>El Marketplace de Maquinaria Pesada en México</h1>
+            <p>Renta, compra o vende maquinaria pesada. Encuentra trabajo como operador o cotiza seguros y fletes.</p>
+            <div class="hero-buttons">
+                <a href="marketplace.html" class="btn-primary">Explorar Maquinaria</a>
+                <a href="jobs.html" class="btn-secondary">Buscar Empleo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2>Categorías Principales</h2>
+            <div class="category-grid">
+                <a href="category.html?cat=excavadoras" class="category-card">
+                    <img src="images/excavator.jpg" alt="Excavadoras">
+                    <h3>Excavadoras</h3>
+                </a>
+                <a href="category.html?cat=bulldozers" class="category-card">
+                    <img src="images/bulldozer.jpg" alt="Bulldozers">
+                    <h3>Bulldozers</h3>
+                </a>
+                <a href="category.html?cat=cargadores" class="category-card">
+                    <img src="images/loader.jpg" alt="Cargadores">
+                    <h3>Cargadores</h3>
+                </a>
+                <a href="category.html?cat=volquetes" class="category-card">
+                    <img src="images/dump-truck.jpg" alt="Volquetes">
+                    <h3>Volquetes</h3>
+                </a>
+                <a href="category.html?cat=refacciones" class="category-card">
+                    <img src="images/parts.jpg" alt="Refacciones">
+                    <h3>Refacciones</h3>
+                </a>
+                <a href="category.html?cat=empleos" class="category-card">
+                    <img src="images/jobs.jpg" alt="Empleos">
+                    <h3>Bolsa de Trabajo</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Equipment -->
+    <section class="featured">
+        <div class="container">
+            <h2>Maquinaria Destacada</h2>
+            <div class="equipment-carousel">
+                <div class="carousel-container">
+                    <div class="equipment-card">
+                        <img src="images/featured1.jpg" alt="Excavadora CAT 320">
+                        <div class="equipment-info">
+                            <h3>Excavadora CAT 320</h3>
+                            <p class="price">$15,000 <span>/día</span></p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Monterrey, NL</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(12)</span>
+                            </div>
+                            <a href="listing.html?id=123" class="btn-view">Ver Detalles</a>
+                        </div>
+                    </div>
+                    <div class="equipment-card">
+                        <img src="images/featured2.jpg" alt="Bulldozer Komatsu D65">
+                        <div class="equipment-info">
+                            <h3>Bulldozer Komatsu D65</h3>
+                            <p class="price">$12,500 <span>/día</span></p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Guadalajara, Jal</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(8)</span>
+                            </div>
+                            <a href="listing.html?id=124" class="btn-view">Ver Detalles</a>
+                        </div>
+                    </div>
+                    <div class="equipment-card">
+                        <img src="images/featured3.jpg" alt="Cargador Frontal CAT 950">
+                        <div class="equipment-info">
+                            <h3>Cargador Frontal CAT 950</h3>
+                            <p class="price">$10,000 <span>/día</span></p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Ciudad de México</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(15)</span>
+                            </div>
+                            <a href="listing.html?id=125" class="btn-view">Ver Detalles</a>
+                        </div>
+                    </div>
+                    <div class="equipment-card">
+                        <img src="images/featured4.jpg" alt="Retroexcavadora JCB 3CX">
+                        <div class="equipment-info">
+                            <h3>Retroexcavadora JCB 3CX</h3>
+                            <p class="price">$8,500 <span>/día</span></p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Puebla, Pue</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(10)</span>
+                            </div>
+                            <a href="listing.html?id=126" class="btn-view">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>¿Cómo Funciona Terraequipo?</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <i class="fas fa-user-plus"></i>
+                    <h3>Regístrate</h3>
+                    <p>Crea tu cuenta como arrendador, operador o comprador.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <i class="fas fa-search"></i>
+                    <h3>Busca</h3>
+                    <p>Encuentra maquinaria, refacciones o empleos.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <i class="fas fa-handshake"></i>
+                    <h3>Contacta</h3>
+                    <p>Habla directamente con el vendedor o empleador.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Realiza la transacción</h3>
+                    <p>Con seguridad y confianza en nuestra plataforma.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Offers -->
+    <section class="job-offers">
+        <div class="container">
+            <h2>Ofertas de Trabajo Recientes</h2>
+            <div class="jobs-grid">
+                <div class="job-card">
+                    <h3>Operador de Excavadora</h3>
+                    <p class="company">Constructora VISE</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Querétaro, Qro</p>
+                    <p class="salary">$18,000 - $22,000/mes</p>
+                    <div class="job-tags">
+                        <span class="tag">Tiempo completo</span>
+                        <span class="tag">Experiencia: 3+ años</span>
+                    </div>
+                    <a href="job-detail.html?id=101" class="btn-apply">Aplicar</a>
+                </div>
+                <div class="job-card">
+                    <h3>Operador de Cargador Frontal</h3>
+                    <p class="company">Minera del Norte</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Zacatecas, Zac</p>
+                    <p class="salary">$20,000 - $25,000/mes</p>
+                    <div class="job-tags">
+                        <span class="tag">Tiempo completo</span>
+                        <span class="tag">Certificación requerida</span>
+                    </div>
+                    <a href="job-detail.html?id=102" class="btn-apply">Aplicar</a>
+                </div>
+                <div class="job-card">
+                    <h3>Mecánico de Maquinaria Pesada</h3>
+                    <p class="company">Grupo Industrial LAR</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> San Luis Potosí, SLP</p>
+                    <p class="salary">$15,000 - $18,000/mes</p>
+                    <div class="job-tags">
+                        <span class="tag">Tiempo completo</span>
+                        <span class="tag">Especialidad en CAT</span>
+                    </div>
+                    <a href="job-detail.html?id=103" class="btn-apply">Aplicar</a>
+                </div>
+            </div>
+            <div class="see-all">
+                <a href="jobs.html" class="btn-secondary">Ver todas las ofertas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance and Shipping Calculator -->
+    <section class="calculator">
+        <div class="container">
+            <h2>Cotiza Seguros y Fletes</h2>
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="equipment-type">Tipo de Equipo:</label>
+                    <select id="equipment-type">
+                        <option value="">Selecciona un tipo</option>
+                        <option value="excavator">Excavadora</option>
+                        <option value="bulldozer">Bulldozer</option>
+                        <option value="loader">Cargador Frontal</option>
+                        <option value="dumptruck">Volquete</option>
+                        <option value="crane">Grúa</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="origin">Origen:</label>
+                    <input type="text" id="origin" placeholder="Ciudad o código postal">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destino:</label>
+                    <input type="text" id="destination" placeholder="Ciudad o código postal">
+                </div>
+                <div class="form-group">
+                    <label for="value">Valor del Equipo (MXN):</label>
+                    <input type="number" id="value" placeholder="Ej. 500,000">
+                </div>
+                <div class="form-group">
+                    <label for="coverage">Tipo de Cobertura:</label>
+                    <select id="coverage">
+                        <option value="basic">Básica</option>
+                        <option value="medium">Intermedia</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                </div>
+                <button id="calculate-btn" class="btn-primary">Calcular</button>
+            </div>
+            <div id="results" class="calculator-results" style="display: none;">
+                <h3>Resultados de tu Cotización</h3>
+                <div class="result-item">
+                    <p>Costo de Seguro:</p>
+                    <p class="amount" id="insurance-cost">$0.00</p>
+                </div>
+                <div class="result-item">
+                    <p>Costo de Flete:</p>
+                    <p class="amount" id="shipping-cost">$0.00</p>
+                </div>
+                <div class="result-item total">
+                    <p>Total Estimado:</p>
+                    <p class="amount" id="total-cost">$0.00</p>
+                </div>
+                <button class="btn-secondary">Contratar Ahora</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-preview">
+        <div class="container">
+            <h2>Últimos Artículos del Blog</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <img src="images/blog1.jpg" alt="Mantenimiento de maquinaria">
+                    <div class="blog-content">
+                        <h3>Consejos para el Mantenimiento Preventivo de tu Excavadora</h3>
+                        <p class="date">15 Marzo 2023</p>
+                        <p class="excerpt">Aprende cómo mantener tu maquinaria en óptimas condiciones para alargar su vida útil y evitar costosas reparaciones...</p>
+                        <a href="blog-post.html?id=1" class="btn-read">Leer más</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="images/blog2.jpg" alt="Certificaciones para operadores">
+                    <div class="blog-content">
+                        <h3>Certificaciones que Todo Operador de Maquinaria Pesada Debe Tener</h3>
+                        <p class="date">8 Marzo 2023</p>
+                        <p class="excerpt">Descubre las certificaciones que pueden aumentar tus oportunidades laborales y tu salario como operador profesional...</p>
+                        <a href="blog-post.html?id=2" class="btn-read">Leer más</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="images/blog3.jpg" alt="Tendencias en maquinaria">
+                    <div class="blog-content">
+                        <h3>Tendencias en Maquinaria Pesada para 2023</h3>
+                        <p class="date">1 Marzo 2023</p>
+                        <p class="excerpt">Las innovaciones tecnológicas que están transformando la industria de la construcción y minería este año...</p>
+                        <a href="blog-post.html?id=3" class="btn-read">Leer más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="see-all">
+                <a href="blog.html" class="btn-secondary">Ver todos los artículos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Lo que Dicen Nuestros Usuarios</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Gracias a Terraequipo pude rentar mi excavadora durante 6 meses seguidos. La plataforma es muy fácil de usar y los pagos siempre son puntuales."</p>
+                    <p class="testimonial-author">- Juan Pérez, Arrendador</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Encontré el trabajo perfecto como operador de bulldozer en mi ciudad. El proceso fue rápido y ahora tengo un empleo estable con buen salario."</p>
+                    <p class="testimonial-author">- Carlos Rodríguez, Operador</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"Como contratista, Terraequipo me ha ahorrado mucho tiempo en encontrar maquinaria disponible cerca de mis obras. El servicio de seguros integrado es un plus."</p>
+                    <p class="testimonial-author">- María González, Contratista</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>¿Listo para unirte a la comunidad de Terraequipo?</h2>
+            <p>Regístrate hoy y comienza a rentar, comprar o encontrar trabajo en el sector de maquinaria pesada.</p>
+            <div class="cta-buttons">
+                <a href="register.html" class="btn-primary">Registrarse Gratis</a>
+                <a href="contact.html" class="btn-secondary">Contactar Soporte</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Terraequipo</h3>
+                    <p>El marketplace líder para la industria de maquinaria pesada en México. Conectamos dueños, operadores y compradores de manera segura y eficiente.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="about.html">Sobre Nosotros</a></li>
+                        <li><a href="marketplace.html">Marketplace</a></li>
+                        <li><a href="jobs.html">Bolsa de Trabajo</a></li>
+                        <li><a href="insurance.html">Seguros y Fletes</a></li>
+                        <li><a href="parts.html">Refacciones</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Términos y Condiciones</a></li>
+                        <li><a href="privacy.html">Política de Privacidad</a></li>
+                        <li><a href="cookies.html">Política de Cookies</a></li>
+                        <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Insurgentes Sur 1234, CDMX</li>
+                        <li><i class="fas fa-phone"></i> +52 55 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> contacto@terraequipo.com</li>
+                        <li><i class="fas fa-clock"></i> Lunes a Viernes: 9am - 6pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Terraequipo. Todos los derechos reservados.</p>
+                <div class="payment-methods">
+                    <img src="images/visa.png" alt="Visa">
+                    <img src="images/mastercard.png" alt="Mastercard">
+                    <img src="images/amex.png" alt="American Express">
+                    <img src="images/paypal.png" alt="PayPal">
+                    <img src="images/oxxo.png" alt="OXXO">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

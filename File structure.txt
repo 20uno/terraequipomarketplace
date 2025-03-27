@@ -1,0 +1,11 @@
+terraequipo/
+├── index.html
+├── css/
+│   ├── style.css
+│   └── responsive.css
+├── js/
+│   ├── main.js
+│   ├── search.js
+│   └── carousel.js
+├── images/
+└── README.md
