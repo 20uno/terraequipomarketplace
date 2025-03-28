@@ -1,94 +1,126 @@
-// Main JavaScript File
+/**
+ * Terraequipo Main JavaScript
+ * Contains core functionality for the website
+ */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle (would need to add HTML for mobile menu)
-    const mobileMenuButton = document.createElement('button');
-    mobileMenuButton.className = 'mobile-menu-button';
-    mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
-    document.querySelector('.header .container').appendChild(mobileMenuButton);
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
     
-    mobileMenuButton.addEventListener('click', function() {
-        document.querySelector('.main-nav').classList.toggle('active');
-    });
-    
-    // Calculator functionality
-    const calculateBtn = document.getElementById('calculate-btn');
-    if (calculateBtn) {
-        calculateBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Simple calculation for demo purposes
-            const equipmentType = document.getElementById('equipment-type').value;
-            const value = parseFloat(document.getElementById('value').value) || 0;
-            const coverage = document.getElementById('coverage').value;
-            
-            // Calculate insurance cost (1-3% of equipment value based on coverage)
-            let insuranceRate;
-            switch(coverage) {
-                case 'basic':
-                    insuranceRate = 0.01;
-                    break;
-                case 'medium':
-                    insuranceRate = 0.02;
-                    break;
-                case 'premium':
-                    insuranceRate = 0.03;
-                    break;
-                default:
-                    insuranceRate = 0.02;
-            }
-            
-            const insuranceCost = value * insuranceRate;
-            
-            // Calculate shipping cost (random for demo)
-            const shippingCost = Math.floor(Math.random() * 5000) + 2000;
-            
-            // Display results
-            document.getElementById('insurance-cost').textContent = '$' + insuranceCost.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            document.getElementById('shipping-cost').textContent = '$' + shippingCost.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            document.getElementById('total-cost').textContent = '$' + (insuranceCost + shippingCost).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            
-            document.getElementById('results').style.display = 'block';
+    if (mobileMenuToggle && mainNav) {
+        mobileMenuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
         });
     }
     
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
+    // Close mobile menu when clicking on a link
+    const navLinks = document.querySelectorAll('.main-nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenuToggle.classList.remove('active');
+            mainNav.classList.remove('active');
+            document.body.classList.remove('no-scroll');
         });
     });
     
-    // Form validation example
+    // Initialize all tooltips
+    const tooltipElements = document.querySelectorAll('[data-tooltip]');
+    tooltipElements.forEach(element => {
+        element.addEventListener('mouseenter', showTooltip);
+        element.addEventListener('mouseleave', hideTooltip);
+    });
+    
+    // Form validation
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
         form.addEventListener('submit', function(e) {
-            const inputs = this.querySelectorAll('input[required], select[required], textarea[required]');
+            const requiredFields = this.querySelectorAll('[required]');
             let isValid = true;
             
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    input.style.borderColor = 'var(--danger-color)';
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('error');
                     isValid = false;
-                } else {
-                    input.style.borderColor = '';
                 }
             });
             
             if (!isValid) {
                 e.preventDefault();
-                alert('Por favor completa todos los campos requeridos.');
+                const firstError = this.querySelector('.error');
+                firstError.focus();
+                
+                // Show error message
+                const errorMessage = document.createElement('div');
+                errorMessage.className = 'error-message';
+                errorMessage.textContent = 'Por favor completa todos los campos requeridos.';
+                this.insertBefore(errorMessage, this.firstChild);
+                
+                // Remove error classes after 3 seconds
+                setTimeout(() => {
+                    requiredFields.forEach(field => field.classList.remove('error'));
+                    if (errorMessage.parentNode) {
+                        errorMessage.parentNode.removeChild(errorMessage);
+                    }
+                }, 3000);
             }
         });
     });
+    
+    // Initialize scroll animations
+    initScrollAnimations();
 });
+
+/**
+ * Shows tooltip for elements with data-tooltip attribute
+ */
+function showTooltip(e) {
+    const tooltipText = this.getAttribute('data-tooltip');
+    if (!tooltipText) return;
+    
+    const tooltip = document.createElement('div');
+    tooltip.className = 'tooltip';
+    tooltip.textContent = tooltipText;
+    
+    document.body.appendChild(tooltip);
+    
+    const rect = this.getBoundingClientRect();
+    tooltip.style.left = `${rect.left + rect.width / 2 - tooltip.offsetWidth / 2}px`;
+    tooltip.style.top = `${rect.top - tooltip.offsetHeight - 10}px`;
+}
+
+/**
+ * Hides tooltip
+ */
+function hideTooltip() {
+    const tooltip = document.querySelector('.tooltip');
+    if (tooltip) {
+        tooltip.parentNode.removeChild(tooltip);
+    }
+}
+
+/**
+ * Initialize scroll animations for reveal elements
+ */
+function initScrollAnimations() {
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    function checkScroll() {
+        revealElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementTop < windowHeight - 100) {
+                element.classList.add('active');
+            }
+        });
+    }
+    
+    // Check on load
+    checkScroll();
+    
+    // Check on scroll
+    window.addEventListener('scroll', checkScroll);
+}
